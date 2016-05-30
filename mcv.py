@@ -31,9 +31,9 @@ def get_meta(target_version, target_side, target_data):
     manifest = get_version_manifest(args.staging)
 
     if target_version == 'latest-release':
-        target_version = get_latest('release')
+        target_version = manifest['latest']['release']
     elif target_version == 'latest-snapshot':
-        target_version = get_latest('snapshot')
+        target_version = manifest['latest']['snapshot']
 
     for version in manifest['versions']:
         if version['id'] == target_version:
